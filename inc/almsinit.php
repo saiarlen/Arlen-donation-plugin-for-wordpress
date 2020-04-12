@@ -8,6 +8,7 @@ All plugin bootup functions
 
 defined('ABSPATH') or die;
 
+
 class AlmsBootup 
 {
 

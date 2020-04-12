@@ -14,11 +14,6 @@ Text Domain: alms
 */
 
 defined('ABSPATH') or die("You don't have an access to this file!");
-if (file_exists('autoload.php')) {
-	require_once dirname(__FILE__) . 'vendor/autoload.php';
-}
-
-
 
 /**
  * Main class
@@ -29,6 +24,7 @@ class AlmsSetup
 	public function __construct()
 	{
 		require_once plugin_dir_path( __FILE__ ) . 'inc/almsinit.php';
+
 	 
 	}
 	
