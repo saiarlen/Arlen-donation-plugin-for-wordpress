@@ -15,6 +15,7 @@ Text Domain: alms
 
 defined('ABSPATH') or die("You don't have an access to this file!");
 
+require_once plugin_dir_path( __FILE__ ) . 'inc/paths.php';
 /**
  * Main class
  */

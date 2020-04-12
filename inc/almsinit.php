@@ -9,13 +9,17 @@ All plugin bootup functions
 defined('ABSPATH') or die;
 
 
+//Initial Class
 class AlmsBootup 
 {
 
 //Init 
  function __construct(){
  
- 	add_action( 'admin_enqueue_scripts', array($this, 'adminEnqueue') );
+ 
+  add_action( 'wp_enqueue_scripts', array($this, 'FrontEnqueue') );
+
+  add_action( 'admin_enqueue_scripts', array($this, 'adminEnqueue') );
 
  	add_action('admin_menu', array($this, 'adminPage'));
 
@@ -26,8 +30,21 @@ class AlmsBootup
   //All admin side scripts
   public function adminEnqueue()
   {
+     //Styles
+       wp_enqueue_style( 'alms_bootstrap_css', plugins_url(BSCSS, __FILE__) );
 
-  		wp_enqueue_script( 'alms_script', plugins_url('../vendor/alertms.js', __FILE__) );
+      //scripts
+     /* wp_enqueue_script( 'alms_bootstrap_js', plugins_url(BSJS, __FILE__) );*/
+  }
+
+  //All front end scripts
+  public function FrontEnqueue()
+  {
+      //Styles
+       wp_enqueue_style( 'alms_bootstrap_css', plugins_url(BSCSS, __FILE__) );
+
+      //scripts
+     /* wp_enqueue_script( 'alms_bootstrap_js', plugins_url(BSJS, __FILE__) );*/
   }
 
   //For adding admin menu at the side bar
